@@ -7,10 +7,26 @@
  */
 #include <stdio.h>
 #include <time.h>
-
+#include "exercise.h"
+void abdos(clock_t start, int n);
 int main(){
-	clock_t start = clock();
-	while (1)
-		printf("%f\n", (double)clock() / CLOCKS_PER_SEC);
+	clock_t time = clock();
+	printf("Tractions : %d\n", tractions);
+	printf("Pompes : %d\n", tractions);
+	printf("Abdos-Planche : %ds\n", abds);
+	printf("Abdos-Droite : %ds\n", abds);
+	printf("Abdos-Gauche : %ds\n", abds);
+	abdos(time, abds);
 	return 0;
+}
+
+void
+abdos(clock_t start, int n){
+	double sec, prev;
+	prev = 0;
+	while((sec = n - (clock() - start) / CLOCKS_PER_SEC) > 0)
+		if (sec != prev){
+			printf("Seconds remaining: %.0f\n", sec);
+			prev = sec;
+		}
 }
