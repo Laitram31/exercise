@@ -9,6 +9,8 @@
 #include <time.h>
 #include "exercise.h"
 void abdos(clock_t start, int n);
+void tractions();
+
 int main(){
 	clock_t time = clock();
 	printf("Tractions : %d\n", tractions);
@@ -20,6 +22,10 @@ int main(){
 	return 0;
 }
 
+/*void
+tractions(){
+	while(getchar() != '\n'){
+		printf(*/
 void
 abdos(clock_t start, int n){
 	double sec, prev;
