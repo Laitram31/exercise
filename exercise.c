@@ -8,17 +8,17 @@
 #include <stdio.h>
 #include <time.h>
 #include "exercise.h"
-void abdos(clock_t start, int n);
-void tractions();
+void core_strengthening(clock_t start, int n);
+void pull_ups();
 
 int main(){
 	clock_t time = clock();
-	printf("Tractions : %d\n", tractions);
-	printf("Pompes : %d\n", tractions);
-	printf("Abdos-Planche : %ds\n", abds);
-	printf("Abdos-Droite : %ds\n", abds);
-	printf("Abdos-Gauche : %ds\n", abds);
-	abdos(time, abds);
+	printf("Pull-ups: %d\n", n_pull_ups);
+	printf("Push-ups: %d\n", n_pull_ups);
+	printf("Core strengthening - plank: %ds\n", t_core);
+	printf("Core strengthening - right side: %ds\n", t_core);
+	printf("Core strengthening - left side: %ds\n", t_core);
+	core_strengthening(time, t_core);
 	return 0;
 }
 
@@ -27,12 +27,13 @@ tractions(){
 	while(getchar() != '\n'){
 		printf(*/
 void
-abdos(clock_t start, int n){
+core_strengthening(clock_t start, int n){
 	double sec, prev;
 	prev = 0;
 	while((sec = n - (clock() - start) / CLOCKS_PER_SEC) > 0)
 		if (sec != prev){
-			printf("Seconds remaining: %.0f\n", sec);
+			printf("Seconds remaining: %.0f\r", sec);
+			fflush(stdout);
 			prev = sec;
 		}
 }

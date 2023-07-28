@@ -1,4 +1,4 @@
 #include <stdio.h>
 
-int tractions = 10;
-int abds = 45;
+int n_pull_ups = 10;
+int t_core = 45;
