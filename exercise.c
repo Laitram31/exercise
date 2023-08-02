@@ -7,13 +7,17 @@
  */
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
 #include "exercise.h"
+#include "pull_ups.h"
+
 void core_strengthening(clock_t start, int n);
 void pull_ups();
 
 int main(){
 	clock_t time = clock();
 	printf("Pull-ups: %d\n", n_pull_ups);
+	pull_ups();
 	printf("Push-ups: %d\n", n_pull_ups);
 	printf("Core strengthening - plank: %ds\n", t_core);
 	printf("Core strengthening - right side: %ds\n", t_core);
@@ -22,10 +26,24 @@ int main(){
 	return 0;
 }
 
-/*void
-tractions(){
-	while(getchar() != '\n'){
-		printf(*/
+void
+pull_ups(){
+	while(1/*getchar() != '\r'*/){
+		printf("%s \r",puf1);
+		fflush(stdout);
+		sleep(1);
+		printf("%s \r",puf2);
+		fflush(stdout);
+		sleep(1);
+		printf("%s \r",puf3);
+		fflush(stdout);
+		sleep(1);
+		printf("%s \r",puf2);
+		fflush(stdout);
+		sleep(1);
+	}
+}
+
 void
 core_strengthening(clock_t start, int n){
 	double sec, prev;
